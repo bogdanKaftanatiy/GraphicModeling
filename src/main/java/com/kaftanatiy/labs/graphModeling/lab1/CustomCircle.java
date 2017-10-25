@@ -1,8 +1,10 @@
-package lab1;
+package com.kaftanatiy.labs.graphModeling.lab1;
+
+import com.kaftanatiy.labs.graphModeling.utils.CustomFigure;
 
 import java.awt.*;
 
-public class CustomFigure {
+public class CustomCircle implements CustomFigure {
     private int radius;
     private int xCenter;
     private int yCenter;
@@ -11,7 +13,7 @@ public class CustomFigure {
     private int x2, y2;
     private int x3, y3;
 
-    public CustomFigure (int r, int x, int y) {
+    public CustomCircle(int r, int x, int y) {
         this.radius = r;
         this.xCenter = x;
         this.yCenter = y;
@@ -24,7 +26,6 @@ public class CustomFigure {
         this.x2 = (int) (Math.sqrt(Math.pow(radius, 2) - Math.pow(y2 - yCenter, 2)) + xCenter);
         this.x3 = (int) (-Math.sqrt(Math.pow(radius, 2) - Math.pow(y2 - yCenter, 2)) + xCenter);
     }
-
 
     public void doDrawing(Graphics2D g2d) {
         int x = xCenter - radius;

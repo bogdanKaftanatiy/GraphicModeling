@@ -1,14 +1,16 @@
-package lab1;
+package com.kaftanatiy.labs.graphModeling.utils;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class Task1 extends JPanel {
-    private CustomFigure customFigure;
+public abstract class Task1 extends JPanel {
+    protected CustomFigure customFigure;
 
     public Task1() {
-        customFigure = new CustomFigure(100, 350, 350);
+        initFigure();
     }
+
+    protected abstract void initFigure();
 
     @Override
     protected void paintComponent(Graphics g) {

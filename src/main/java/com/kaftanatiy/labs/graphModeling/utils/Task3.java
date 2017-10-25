@@ -1,12 +1,12 @@
-package lab1;
+package com.kaftanatiy.labs.graphModeling.utils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Task3 extends JPanel implements ActionListener{
-    private CustomFigure customFigure;
+public abstract class Task3 extends JPanel implements ActionListener{
+    protected CustomFigure customFigure;
     private int figureRadius = 70;
     private int step = 1;
 
@@ -14,9 +14,12 @@ public class Task3 extends JPanel implements ActionListener{
     private Timer timer;
 
     public Task3() {
-        customFigure = new CustomFigure(figureRadius, 350, 350);
+        initFigure(figureRadius, 350, 350);
         initTimer();
     }
+
+    protected abstract void initFigure(int r, int x, int y);
+
 
     private void initTimer() {
 
@@ -36,7 +39,8 @@ public class Task3 extends JPanel implements ActionListener{
         } else if (figureRadius == 70) {
             step = -step;
         }
-        customFigure = new CustomFigure(figureRadius, 350, 350);
+
+        initFigure(figureRadius, 350, 350);
         customFigure.doDrawing(g2d);
     }
 
